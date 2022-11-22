@@ -1,4 +1,5 @@
-﻿using Pay1194.Entity;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Pay1194.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,10 @@ namespace Pay1194.Service
         Task UpdateAsync(Employee employee);
         Task UpdateAsync(int id);
         Task DeleteAsync(int id);
-        decimal UnionFee(int id);
-        Task StudentLoanRepaymentAmount(int id, decimal totalAmount);
-
+        decimal UnionFees(int id);
+        decimal StudentLoanRepaymentAmount(int id, decimal totalAmount);
+        IEnumerable<SelectListItem> GetAllEmployeesForPayroll();
         IEnumerable<Employee> GetAll();
+
     }
 }
